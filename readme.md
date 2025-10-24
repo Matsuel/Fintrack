@@ -24,3 +24,5 @@ Gérer les graphiques
 Utiliser des bases de données pour stocker les informations utilisateur et financières
 Mettre en œuvre des pratiques de sécurité pour protéger les données utilisateur
 Développer une application complète de bout en bout, de la conception à la mise en production
+Développement d'un tableau d'administration pour la gestion des utilisateurs et exécution des scripts de maintenance avec consultation des logs en temps réel.
+Gestion d'un système de notifications pour les alertes de prix des marchés financiers.
