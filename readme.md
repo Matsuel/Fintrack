@@ -13,3 +13,14 @@ Possibilité de faire des investissements fictifs pour tester des stratégies fi
 - Interface utilisateur intuitive et conviviale (Nextjs / React Native ou SwiftUI)
 - Synchronisation avec les comptes bancaires via Powens
 - Paramétrage des notifications pour les alertes de prix des marchés financiers (ouverture/fermeture de marché, variations importantes sur les actions suivies, etc.)
+
+## Objectifs
+
+Apprendre à utiliser SwiftUI pour le développement iOS
+Approfondir les connaissances en Nextjs et React Native pour le développement web et mobile
+Se familiariser avec les API financières et les services de synchronisation bancaire Powens
+Comprendre les concepts de gestion financière personnelle et d'investissement
+Gérer les graphiques
+Utiliser des bases de données pour stocker les informations utilisateur et financières
+Mettre en œuvre des pratiques de sécurité pour protéger les données utilisateur
+Développer une application complète de bout en bout, de la conception à la mise en production
