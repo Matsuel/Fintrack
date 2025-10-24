@@ -17,7 +17,7 @@ Possibilité de faire des investissements fictifs pour tester des stratégies fi
 ## Objectifs
 
 Apprendre à utiliser SwiftUI pour le développement iOS
-Approfondir les connaissances en Nextjs et React Native pour le développement web et mobile
+Approfondir les connaissances en Nextjs et React Native pour le développement web et mobile (server actions, hooks personnalisés, redux, etc.)
 Se familiariser avec les API financières et les services de synchronisation bancaire Powens
 Comprendre les concepts de gestion financière personnelle et d'investissement
 Gérer les graphiques
