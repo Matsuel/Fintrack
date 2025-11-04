@@ -1,0 +1,21 @@
+{
+  "name": "fintrack",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "bun run --cwd=apps/webapp dev",
+    "dev:api": "bun run --cwd=apps/api dev",
+    "dev:all": "bun run --cwd=apps/api dev & bun run --cwd=apps/webapp dev"
+  }
+}
