@@ -14,8 +14,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:web": "bun run --cwd=apps/webapp dev",
-    "dev:api": "bun run --cwd=apps/api dev",
-    "dev:all": "bun run --cwd=apps/api dev & bun run --cwd=apps/webapp dev"
+    "web": "bun run --cwd=apps/webapp dev",
+    "api": "bun run --cwd=apps/api dev",
+    "dev": "bun run --cwd=apps/api dev & bun run --cwd=apps/webapp dev"
   }
 }
