@@ -16,6 +16,13 @@
   "scripts": {
     "web": "bun run --cwd=apps/webapp dev",
     "api": "bun run --cwd=apps/api dev",
-    "gateway": "bun run --cwd=services/gateway dev"
+    "gateway": "bun run --cwd=services/gateway dev",
+    "auth": "bun run --cwd=services/auth dev"
+  },
+  "dependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.5",
+    "bcrypt": "^6.0.0",
+    "express": "^5.1.0"
   }
 }

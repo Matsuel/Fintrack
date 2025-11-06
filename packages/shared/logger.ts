@@ -3,8 +3,10 @@ import { LogLevel, LogLevelColors, LogLevelValues } from "./constants/logger";
 export class Logger {
 	private logFunction: (message: string) => void = console.log;
 	private logLevel: number = 0;
+	private fileName: string;
 
-	constructor(logLevel: LogLevel = LogLevel.DEBUG) {
+	constructor(fileName: string, logLevel: LogLevel = LogLevel.DEBUG) {
+		this.fileName = fileName;
 		this.setLogLevel(logLevel);
 	}
 
@@ -14,38 +16,38 @@ export class Logger {
 
 	private getNowDate(): string {
 		const now = new Date();
-		return now.toLocaleString();
+		return now.toLocaleString("fr-FR");
 	}
 
 	private canLog(level: LogLevel): boolean {
 		return LogLevelValues[level] >= this.logLevel;
 	}
 
-	public log(color: string, level: LogLevel, message: string[]): void {
+	public log(color: string, level: LogLevel, message: unknown[]): void {
 		if (!this.canLog(level)) return;
 		this.logFunction(
 			color +
-				`[${level}] ${this.getNowDate()} : ${message.join(" ")}` +
+				`[${level} ${this.getNowDate()} ${this.fileName}] : ${message.join(" ")}` +
 				LogLevelColors.END,
 		);
 	}
 
-	public info(...message: string[]): void {
+	public info(...message: unknown[]): void {
 		if (!this.canLog(LogLevel.INFO)) return;
 		this.log(LogLevelColors.INFO, LogLevel.INFO, message);
 	}
 
-	public debug(...message: string[]): void {
+	public debug(...message: unknown[]): void {
 		if (!this.canLog(LogLevel.DEBUG)) return;
 		this.log(LogLevelColors.DEBUG, LogLevel.DEBUG, message);
 	}
 
-	public warn(...message: string[]): void {
+	public warn(...message: unknown[]): void {
 		if (!this.canLog(LogLevel.WARN)) return;
 		this.log(LogLevelColors.WARN, LogLevel.WARN, message);
 	}
 
-	public error(...message: string[]): void {
+	public error(...message: unknown[]): void {
 		if (!this.canLog(LogLevel.ERROR)) return;
 		this.log(LogLevelColors.ERROR, LogLevel.ERROR, message);
 	}

@@ -1,5 +1,5 @@
 {
-	"name": "gateway",
+	"name": "auth",
 	"module": "index.ts",
 	"type": "module",
 	"private": true,
@@ -11,5 +11,9 @@
 	},
 	"peerDependencies": {
 		"typescript": "^5"
+	},
+	"dependencies": {
+		"bcrypt": "^6.0.0",
+		"express": "^5.1.0"
 	}
 }
