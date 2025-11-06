@@ -1,5 +1,5 @@
-import { logger } from "../../packages/shared/logger";
+import { Logger } from "../../packages/shared/logger";
 
-const log = logger.child({ service: "gateway" });
+const logger = new Logger();
 
-log.info("Gateway service started");
+logger.info("Gateway service started.");
