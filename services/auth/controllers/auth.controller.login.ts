@@ -26,7 +26,14 @@ const loginUser = async (req: Request, res: Response) => {
 
 	const token = generateToken(user.id);
 
-	res.status(200).send({ message: "Login successful", token });
+	const userAuth = {
+		id: user.id,
+		username: user.username,
+		email: user.email,
+		token,
+	};
+
+	res.status(200).send({ message: "Login successful", user: userAuth });
 };
 
 export default loginUser;
