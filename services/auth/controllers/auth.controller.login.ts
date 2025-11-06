@@ -8,7 +8,14 @@ const logger = new Logger(__filename.split("/").pop() as string);
 const loginUser = async (req: Request, res: Response) => {
 	const { username, password } = req.body;
 
-	const user = await prisma.user.findFirst({ where: { username } });
+	const user = await prisma.user.findFirst({
+		where: {
+			OR: [
+				{ username },
+				{ email: username }
+			]
+		}
+	});
 
 	if (!user) {
 		logger.warn(`Login failed: Incorrect credentials ${username}`);
@@ -22,13 +29,13 @@ const loginUser = async (req: Request, res: Response) => {
 		return res.status(401).send({ message: "Invalid username or password" });
 	}
 
-	logger.info(`User ${username} logged in successfully`);
+	logger.info(`User ${user.username} logged in successfully`);
 
 	const token = generateToken(user.id);
 
 	const userAuth = {
 		id: user.id,
-		username: user.username,
+		name: user.username,
 		email: user.email,
 		token,
 	};
