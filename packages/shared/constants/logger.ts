@@ -1,9 +1,3 @@
-export enum NodeType {
-	SERVER = "server",
-	NODE = "node",
-	CLIENT = "client",
-}
-
 export enum LogLevelColors {
 	DEBUG = "\x1b[32m",
 	INFO = "\x1b[36m",
