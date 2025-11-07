@@ -13,7 +13,7 @@ const Test = () => {
 	}
 
 	return (
-		<div className="flex w-full flex-col gap-6 items-center">
+		<div className="w-full flex flex-col gap-6 items-center">
 			{session?.user ? (
 				<form
 					action={async () => {
