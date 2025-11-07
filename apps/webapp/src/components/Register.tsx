@@ -1,6 +1,11 @@
 "use client";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { Button } from "./ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Field, FieldGroup, FieldLabel } from "./ui/field";
+import { Input } from "./ui/input";
+import { TabsContent } from "./ui/tabs";
 
 const Register = () => {
 	const [username, setUsername] = useState<string>("");
@@ -25,43 +30,55 @@ const Register = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			Inscription
-			<label>
-				Nom d'utilisateur
-				<input
-					name="username"
-					type="text"
-					value={username}
-					onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Nom d'utilisateur"
-                    className="border-black border"
-				/>
-			</label>
-			<label>
-				Email
-				<input
-					name="email"
-					type="email"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email"
-                    className="border-black border"
-				/>
-			</label>
-			<label>
-				Mot de passe
-				<input
-					name="password"
-					type="password"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Mot de passe"
-                    className="border-black border"
-				/>
-			</label>
-			<button type="submit">Se connecter</button>
-		</form>
+		<TabsContent value="register">
+			<Card>
+				<CardHeader>
+					<CardTitle>Connexion</CardTitle>
+				</CardHeader>
+				<CardContent>
+					<form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+						<FieldGroup>
+							<Field>
+								<FieldLabel htmlFor="username">Nom d'utilisateur</FieldLabel>
+								<Input
+									name="username"
+									type="text"
+									value={username}
+									onChange={(e) => setUsername(e.target.value)}
+									placeholder="Nom d'utilisateur"
+									required
+								/>
+							</Field>
+							<Field>
+								<FieldLabel htmlFor="email">Email</FieldLabel>
+								<Input
+									name="email"
+									type="email"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									placeholder="Email"
+									required
+								/>
+							</Field>
+							<Field>
+								<FieldLabel htmlFor="password">Mot de passe</FieldLabel>
+								<Input
+									name="password"
+									type="password"
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
+									placeholder="Mot de passe"
+									required
+								/>
+							</Field>
+							<Button type="submit">
+								S'inscrire
+							</Button>
+						</FieldGroup>
+					</form>
+				</CardContent>
+			</Card>
+		</TabsContent>
 	);
 };
 
