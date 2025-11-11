@@ -1,6 +1,7 @@
 "use client";
 import { signOut, useSession } from "next-auth/react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Navbar from "./Navbar";
 import Register from "./Register";
 import { SignIn } from "./Signin";
 import { Button } from "./ui/button";
@@ -14,6 +15,7 @@ const Test = () => {
 
 	return (
 		<div className="w-full flex flex-col gap-6 items-center">
+			<Navbar />
 			{session?.user ? (
 				<form
 					action={async () => {
