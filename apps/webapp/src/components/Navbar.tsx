@@ -1,8 +1,8 @@
 "use client"
-import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "./ui/navigation-menu";
+import Link from "next/link";
 import LogoutButton from "./LogoutButton";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "./ui/navigation-menu";
 
 const Navbar = () => {
 
@@ -17,7 +17,12 @@ const Navbar = () => {
             <NavigationMenuList className="flex-wrap">
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                        <Link href="/docs">Docs</Link>
+                        <Link href="/">Acceuil</Link>
+                    </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                        <Link href="/login">Connexion</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <LogoutButton />
